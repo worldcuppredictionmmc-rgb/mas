@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="manifest" href="manifest.json">
+
+    <meta name="theme-color" content="#2563eb">
+
+    <link rel="apple-touch-icon" href="icons/icon-192.png">
+
+<title>Dashboard | Mass Register</title>
+
+<link rel="stylesheet" href="css/dashboard.css">
+
+<link rel="stylesheet" href="css/modal.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+<i class="fa-solid fa-church"></i>
+<h2>Mass Register</h2>
+</div>
+
+
+<div class="user">
+
+    <button id="notificationBtn">
+        🔔
+    <span id="notificationCount">
+    0
+    </span>
+    </button>
+
+    <div class="user-info">
+
+        <span id="welcomeName">Welcome</span>
+
+        <div id="dioceseName"></div>
+
+        <div id="parishName"></div>
+
+    </div>
+
+    <button id="logoutBtn">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        Logout
+    </button>
+
+</div>
+
+
+
+
+</header>
+
+<div id="notificationPanel">
+
+    <div class="notification-header">
+
+        <h3>
+            <i class="fa-solid fa-bell"></i>
+            Notifications
+        </h3>
+
+    </div>
+
+    <div id="notificationList">
+
+        <div class="notification-empty">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            <p>You're all caught up!</p>
+
+            <small>No pending reminders.</small>
+
+        </div>
+
+    </div>
+
+</div>
+
+<section class="cards">
+
+<div class="card">
+
+<i class="fa-solid fa-book-open"></i>
+
+<h3>Received</h3>
+
+<h1 id="receivedCount">0</h1>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-circle-check"></i>
+
+<h3>Celebrated</h3>
+
+<h1 id="completedCount">0</h1>
+
+</div>
+
+<div class="card">
+
+<i class="fa-solid fa-hourglass-half"></i>
+
+<h3>Remaining</h3>
+
+<h1 id="remainingCount">0</h1>
+
+</div>
+
+<div class="card">
+
+    <i class="fa-solid fa-indian-rupee-sign"></i>
+
+    <h3>Total Amount</h3>
+
+    <h1 id="totalAmount">₹0</h1>
+
+</div>
+
+</section>
+
+<section class="year">
+
+<select id="yearSelect">
+
+<option>2026</option>
+
+</select>
+
+<button id="addYearBtn">
+
+<i class="fa-solid fa-plus"></i>
+
+Add Year
+
+</button>
+
+<button id="exportPdfBtn">
+
+<i class="fa-solid fa-file-pdf"></i>
+
+Export PDF
+
+</button>
+
+</section>
+
+<section class="months">
+
+<div class="month-card" data-month="January">
+    <h3>January</h3>
+      <p class="month-count">📥 0 Entries</p>
+
+    <p class="month-pending">⏳ 0 Pending</p>
+
+    <p class="month-amount">💰 ₹0</p>
+</div>
+<div class="month-card" data-month="February">
+    <h3>February</h3>
+      <p class="month-count">📥 0 Entries</p>
+
+    <p class="month-pending">⏳ 0 Pending</p>
+
+    <p class="month-amount">💰 ₹0</p>
+</div>
+<div class="month-card" data-month="March">
+    <h3>March</h3>
+      <p class="month-count">📥 0 Entries</p>
+
+    <p class="month-pending">⏳ 0 Pending</p>
+
+    <p class="month-amount">💰 ₹0</p>
+</div>
+<div class="month-card" data-month="April">
+    <h3>April</h3>
+      <p class="month-count">📥 0 Entries</p>
+
+    <p class="month-pending">⏳ 0 Pending</p>
+
+    <p class="month-amount">💰 ₹0</p>
+</div>
+<div class="month-card" data-month="May">
+    <h3>May</h3>
+      <p class="month-count">📥 0 Entries</p>
+
+    <p class="month-pending">⏳ 0 Pending</p>
+
+    <p class="month-amount">💰 ₹0</p>
+</div>
+<div class="month-card" data-month="June">
+    <h3>June</h3>
+      <p class="month-count">📥 0 Entries</p>
+
+    <p class="month-pending">⏳ 0 Pending</p>
+
+    <p class="month-amount">💰 ₹0</p>
+</div>
+<div class="month-card" data-month="July">
+    <h3>July</h3>
+      <p class="month-count">📥 0 Entries</p>
+
+    <p class="month-pending">⏳ 0 Pending</p>
+
+    <p class="month-amount">💰 ₹0</p>
+</div>
+<div class="month-card" data-month="August">
+    <h3>August</h3>
+      <p class="month-count">📥 0 Entries</p>
+
+    <p class="month-pending">⏳ 0 Pending</p>
+
+    <p class="month-amount">💰 ₹0</p>
+</div>
+<div class="month-card" data-month="September">
+    <h3>September</h3>
+      <p class="month-count">📥 0 Entries</p>
+
+    <p class="month-pending">⏳ 0 Pending</p>
+
+    <p class="month-amount">💰 ₹0</p>
+</div>
+<div class="month-card" data-month="October">
+    <h3>October</h3>
+      <p class="month-count">📥 0 Entries</p>
+
+    <p class="month-pending">⏳ 0 Pending</p>
+
+    <p class="month-amount">💰 ₹0</p>
+</div>
+<div class="month-card" data-month="November">
+    <h3>November</h3>
+      <p class="month-count">📥 0 Entries</p>
+
+    <p class="month-pending">⏳ 0 Pending</p>
+
+    <p class="month-amount">💰 ₹0</p>
+</div>
+<div class="month-card" data-month="December">
+    <h3>December</h3>
+      <p class="month-count">📥 0 Entries</p>
+
+    <p class="month-pending">⏳ 0 Pending</p>
+
+    <p class="month-amount">💰 ₹0</p>
+</div>
+
+</section>
+
+<!-- Mass Entry Modal -->
+
+<div id="massModal" class="modal">
+
+<div class="modal-content">
+
+<div class="modal-header">
+
+<h2 id="modalTitle">
+
+✝ Add Mass Entry
+
+</h2>
+
+<span id="closeModal">&times;</span>
+
+</div>
+
+<div class="modal-body">
+
+<div class="input-group">
+
+<label>Date</label>
+
+<input type="date" id="massDate">
+
+</div>
+
+<div class="input-group">
+
+<label>Mass Type</label>
+
+<select id="massType">
+
+<option>Living Intention</option>
+
+<option>Deceased Intention</option>
+
+<option>Rasaa</option>
+
+<option>Thanksgiving</option>
+
+<option>Special Intention</option>
+
+<option>Other</option>
+
+</select>
+
+</div>
+
+<div class="input-group">
+
+<label>Remark</label>
+
+<textarea
+id="remark"
+rows="4"
+placeholder="Enter remark..."></textarea>
+
+</div>
+
+<div class="input-group">
+
+    <label>Amount (₹)</label>
+
+    <input
+        type="number"
+        id="amount"
+        placeholder="Enter amount">
+
+</div>
+
+<label class="check">
+
+<input
+type="checkbox"
+id="celebrated">
+
+Celebrated
+
+</label>
+
+<div class="buttons">
+
+<button
+id="viewEntriesBtn"
+type="button">
+
+📖 View Entries
+
+</button>
+
+<button id="cancelBtn">
+
+Cancel
+
+</button>
+
+<button id="saveBtn" type="button">
+    Save
+</button>
+
+</div>
+
+<hr>
+
+<!--<h3>Saved Entries</h3>
+
+<div id="entriesList">
+
+    <p>No entries yet.</p>
+
+</div>-->
+
+</div>
+
+</div>
+
+</div>
+
+<script type="module" src="js/firebase.js"></script>
+<script type="module" src="js/dashboard.js"></script>
+<script type="module" src="js/notification.js"></script>
+<script type="module" src="js/dashboardModal.js"></script>
+
+<!-- Export PDF Modal -->
+
+<div id="pdfModal" class="modal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h2>📄 Export Report</h2>
+
+            <span id="closePdfModal">&times;</span>
+
+        </div>
+
+        <div class="modal-body">
+
+            <div class="input-group">
+
+                <label>Report Type</label>
+
+                <select id="reportType">
+
+                    <option value="monthly">Monthly Report</option>
+
+                    <option value="yearly">Yearly Report</option>
+
+                </select>
+
+            </div>
+
+            <div class="input-group" id="monthGroup">
+
+                <label>Month</label>
+
+                <select id="pdfMonth">
+
+                    <option>January</option>
+                    <option>February</option>
+                    <option>March</option>
+                    <option>April</option>
+                    <option>May</option>
+                    <option>June</option>
+                    <option>July</option>
+                    <option>August</option>
+                    <option>September</option>
+                    <option>October</option>
+                    <option>November</option>
+                    <option>December</option>
+
+                </select>
+
+            </div>
+
+            <div class="input-group">
+
+                <label>Year</label>
+
+                <select id="pdfYear"></select>
+
+            </div>
+
+            <div class="buttons">
+
+                <button id="cancelPdfBtn">
+
+                    Cancel
+
+                </button>
+
+                <button id="generatePdfBtn">
+
+                    Export PDF
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.4/jspdf.plugin.autotable.min.js"></script>
+
+<script type="module" src="js/pdf.js"></script>
+
+
+<div id="toast"></div>
+
+
+<script>
+
+if ("serviceWorker" in navigator) {
+
+    window.addEventListener("load", () => {
+
+        navigator.serviceWorker.register("/service-worker.js")
+        .then(() => {
+
+            console.log("✅ Service Worker Registered");
+
+        })
+        .catch((err) => {
+
+            console.error(err);
+
+        });
+
+    });
+
+}
+
+</script>
+
+<script type="module" src="js/messaging.js"></script>
+
+<div id="entriesSheet" class="entries-sheet">
+
+    <div class="sheet-header">
+
+        <h2 id="sheetTitle">📖 Entries</h2>
+
+        <button id="closeSheet">
+            ✕
+        </button>
+
+    </div>
+
+    <button id="addEntryBtn">
+
+        ➕ Add New Entry
+
+    </button>
+
+    <div id="sheetEntries">
+
+        Loading...
+
+    </div>
+
+</div>
+
+<div id="sheetOverlay"></div>
+</body>
+
+</html>

@@ -1,0 +1,297 @@
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+    align-items:flex-start;
+    padding:20px;
+    overflow-y:auto;
+    background:rgba(2,6,23,.45);
+}
+
+.modal-content{
+    width:560px;
+    max-width:95%;
+    background:#020409;
+    color:#fff;
+    border-radius:20px;
+    overflow:hidden;
+    animation:popup .25s ease;
+    box-shadow:0 20px 50px rgba(71, 66, 66, 0.25);
+    max-height:90vh;
+    overflow-y:auto;
+}
+
+.modal-content input,
+.modal-content textarea,
+.modal-content select{
+
+    background:#1e293b;
+    color:#fff;
+    border:1px solid #334155;
+
+}
+
+.modal-content input::placeholder,
+.modal-content textarea::placeholder{
+
+    color:#94a3b8;
+
+}
+
+.modal-content label{
+
+    color:#fff;
+    font-weight:600;
+    margin-bottom:6px;
+    display:block;
+
+}
+
+
+@keyframes popup{
+
+from{
+    transform:scale(.9);
+    opacity:0;
+}
+
+to{
+    transform:scale(1);
+    opacity:1;
+}
+
+}
+
+.modal-header{
+    background:#1e3a8a;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 25px;
+}
+
+#closeModal{
+    cursor:pointer;
+    font-size:28px;
+}
+
+.modal-body{
+    padding:25px;
+}
+
+.modal-body input,
+.modal-body textarea,
+.modal-body select{
+
+    background:#111827;
+    color:#fff;
+    border:1px solid #334155;
+
+}
+
+.modal-body input::placeholder,
+.modal-body textarea::placeholder{
+
+    color:#94a3b8;
+
+}
+
+
+.input-group{
+    display:flex;
+    flex-direction:column;
+    margin-bottom:18px;
+}
+
+.input-group label{
+
+    display:block;
+    margin-bottom:8px;
+
+    color:#e2e8f0;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea{
+
+    width:100%;
+
+    padding:14px;
+
+    background:#111827;
+
+    color:#fff;
+
+    border:1px solid #334155;
+
+    border-radius:12px;
+
+    font-size:15px;
+
+    outline:none;
+
+    transition:.25s;
+
+}
+
+.input-group input:focus,
+.input-group textarea:focus,
+.input-group select:focus{
+
+    border-color:#2563eb;
+
+    box-shadow:0 0 0 3px rgba(37,99,235,.20);
+
+}
+
+.check{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+margin:15px 0;
+
+}
+
+.buttons{
+
+display:flex;
+
+gap:12px;
+
+margin-top:25px;
+
+}
+
+.buttons button{
+
+flex:1;
+
+}
+
+#cancelBtn{
+
+background:#ef4444;
+
+color:white;
+
+border:none;
+
+padding:12px 20px;
+
+border-radius:10px;
+
+cursor:pointer;
+
+}
+
+#saveBtn{
+
+background:#1e3a8a;
+
+color:white;
+
+border:none;
+
+padding:12px 20px;
+
+border-radius:10px;
+
+cursor:pointer;
+
+}
+
+.modal #entriesList{
+
+    margin-top:20px;
+
+    max-height:250px;
+
+    overflow-y:auto;
+
+}
+
+.modal .entry-card{
+    border:1px solid #ddd;
+    border-radius:12px;
+    padding:12px;
+    margin-bottom:12px;
+    background:#f8fafc;
+}
+.modal.entry-card h4{
+
+    color:#1e3a8a;
+
+    margin-bottom:6px;
+
+}
+
+.model.entry-card p{
+
+    margin:4px 0;
+
+    font-size:14px;
+
+}
+
+.status{
+
+    font-weight:bold;
+
+    color:green;
+
+}
+
+.pending{
+
+    color:#dc2626;
+
+}
+
+
+.modal.entry-actions{
+    display:flex;
+    gap:10px;
+    margin-top:12px;
+}
+
+.edit-btn,
+.delete-btn{
+    border:none;
+    padding:8px 14px;
+    border-radius:8px;
+    cursor:pointer;
+    color:white;
+}
+
+.modal.edit-btn{
+    background:#2563eb;
+}
+
+.modal.delete-btn{
+    background:#dc2626;
+}
+
+.loading{
+
+    text-align:center;
+
+    padding:25px;
+
+    color:#94a3b8;
+
+}

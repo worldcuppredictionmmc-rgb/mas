@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Entries | Mass Register</title>
+
+<link rel="stylesheet" href="css/entries.css">
+<link rel="stylesheet" href="css/modal.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+<button id="backBtn">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+</button>
+
+<div>
+
+<h2 id="monthTitle">
+
+📖 Entries
+
+</h2>
+
+<p id="entryCount">
+
+0 Entries
+
+</p>
+
+</div>
+
+</header>
+
+<main class="container">
+
+<div id="entriesList">
+
+<div class="loading">
+
+⏳ Loading Entries...
+
+</div>
+
+</div>
+
+</main>
+
+<button id="addEntryBtn" class="fab">
+
+<i class="fa-solid fa-plus"></i>
+
+</button>
+
+<!-- =========================
+     MASS ENTRY MODAL
+========================== -->
+
+<div id="massModal" class="modal">
+
+<div class="modal-content">
+
+<div class="modal-header">
+
+<h2 id="modalTitle">
+
+✝ Add Mass Entry
+
+</h2>
+
+<span id="closeModal">
+
+&times;
+
+</span>
+
+</div>
+
+<div class="modal-body">
+
+<div class="input-group">
+
+<label>Date</label>
+
+<input
+type="date"
+id="massDate">
+
+</div>
+
+<div class="input-group">
+
+<label>Mass Type</label>
+
+<select id="massType">
+
+<option>Living Intention</option>
+<option>Deceased Intention</option>
+<option>Rasaa</option>
+<option>Thanksgiving</option>
+<option>Special Intention</option>
+<option>Other</option>
+
+</select>
+
+</div>
+
+<div class="input-group">
+
+<label>Remark</label>
+
+<textarea
+id="remark"
+rows="4"
+placeholder="Enter remark..."></textarea>
+
+</div>
+
+<div class="input-group">
+
+<label>Amount (₹)</label>
+
+<input
+type="number"
+id="amount"
+placeholder="Enter amount">
+
+</div>
+
+<label class="check">
+
+<input
+type="checkbox"
+id="celebrated">
+
+Celebrated
+
+</label>
+
+<div class="buttons">
+
+<button id="cancelBtn">
+
+Cancel
+
+</button>
+
+<button
+id="saveBtn"
+type="button">
+
+Save
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div id="toast"></div>
+
+<script type="module" src="js/firebase.js"></script>
+
+<script type="module" src="js/entries.js"></script>
+
+</body>
+
+</html>
