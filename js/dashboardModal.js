@@ -198,7 +198,7 @@ catch(error){
 
 export async function loadEntries(){
 
-    const entriesList = document.getElementById("entriesList");
+    const entriesList =document.getElementById("sheetEntries");
 
     entriesList.innerHTML=`
 
